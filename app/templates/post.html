@@ -1,0 +1,16 @@
+{% extends 'base_layout.html' %} 
+
+
+{% block content %}
+<div class="post-container">
+  <div class="title">{{post.title}}</div>
+  <div class="info">{{post.date_added}} by {{post.author}}</div>
+
+  {% if post.categories %} {{post.categories}} {% endif %}
+
+  <div class="image">
+    <img src="{{ post.image.url }}" />
+  </div>
+  <div class="post-body">{{post.body}}</div>
+</div>
+{% endblock %}

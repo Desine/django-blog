@@ -1,0 +1,12 @@
+{% extends 'base_layout.html' %} 
+
+{% block content %}
+<div class="form">
+  <form action="">
+      {% for field in form %}
+      <div class="field">{{ field }}</div>
+      {% endfor %}
+      <button>Create</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'base_layout.html' %}
+
+
+{% block content %}
+<div class="container">
+  {% for post in posts %}
+  <a class="post" href="{% url 'app:post_detail' post.id %}">
+    <div>
+      <div class="title">{{post.title}}</div>
+      <div class="author">Опубликовано: {{post.author}}</div>
+    </div>
+    <div>
+      <div class="text">{{post.snippet}}...</div>
+      <div class="date">{{post.date_added}}</div>
+    </div>
+  </a>
+  {% endfor %}
+</div>
+{% endblock %}
