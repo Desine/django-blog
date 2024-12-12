@@ -1,0 +1,19 @@
+{% extends 'base_layout.html' %} 
+
+{% block content %}
+<div class="form">
+  <form action="" method="post" enctype="multipart/form-data" style="width: 30vw">
+    {% csrf_token %}
+    {% for field in form %}
+
+    <div class="field">
+      {{ field }}
+    </div>
+    {% endfor %}
+    <div class="redirect" style="text-align: right;">Перейти на страницу 
+      <a href="{% url 'users:login' %}">входа</a>
+    </div>
+    <button>Зарегистрироваться</button>
+  </form>
+</div>
+{% endblock %}

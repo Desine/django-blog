@@ -1,4 +1,6 @@
-{% extends 'base_layout.html' %} {% block content %}
+{% extends 'base_layout.html' %} 
+
+{% block content %}
 <div class="post-container">
   <div class="header">
     <div>
@@ -6,14 +8,16 @@
       <div class="info">{{post.date_added}} by {{post.author}}</div>
     </div>
 
+    {% if user == post.author %}
     <div class="buttons">
-      <a class="button primary" href="">
+      <a class="button primary" href="{% url 'app:post_edit' post.pk %}">
         <ion-icon name="create-outline"></ion-icon>
       </a>
       <a class="button danger" href="{% url 'app:post_delete' post.pk %}">
         <ion-icon name="trash-outline"></ion-icon>
       </a>
     </div>
+    {% endif %}
   </div>
 
   <div class="image">
